@@ -4,7 +4,7 @@
 // reduce
 
 // Example for cars
-const cars = {
+export const cars = {
   modelS: { brand: "Tesla", color: "white", price: 79999 },
   corolla: { brand: "Toyota", color: "silver", price: 20000 },
   mustang: { brand: "Ford", color: "red", price: 45000 },
@@ -14,7 +14,7 @@ const cars = {
 };
 
 // Example for students
-const students = {
+export const students = {
   alice: { age: 20, major: "Computer Science", gpa: 3.8 },
   bob: { age: 19, major: "Mathematics", gpa: 3.2 },
   charlie: { age: 21, major: "History", gpa: 3.5 },
@@ -28,8 +28,8 @@ interface Dict<T> {
 }
 
 // Array.prototype.map, but for Dict
-function mapDict(...args: any[]): any {}
+export function mapDict(...args: any[]): any {}
 // Array.prototype.filter, but for Dict
-function filterDict(...args: any[]): any {}
+export function filterDict(...args: any[]): any {}
 // Array.prototype.reduce, but for Dict
-function reduceDict(...args: any[]): any {}
+export function reduceDict(...args: any[]): any {}
