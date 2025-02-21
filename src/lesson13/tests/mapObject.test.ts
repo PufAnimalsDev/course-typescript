@@ -1,6 +1,6 @@
-import { cars, mapDict, students } from "../start";
+import { cars, mapObject, students } from "../start";
 
-describe('mapDict', () => {
+describe('mapObject', () => {
   const books = {
     book1: { title: "1984", author: "George Orwell", pages: 328 },
     book2: { title: "To Kill a Mockingbird", author: "Harper Lee", pages: 281 },
@@ -10,7 +10,7 @@ describe('mapDict', () => {
   };
 
   test('maps object values for cars', () => {
-    const result = mapDict(cars, (value) => ({ ...value, price: value.price + 1000 }));
+    const result = mapObject(cars, (value) => ({ ...value, price: value.price + 1000 }));
     expect(result).toEqual({
       modelS: { brand: "Tesla", color: "white", price: 80999 },
       corolla: { brand: "Toyota", color: "silver", price: 21000 },
@@ -22,7 +22,7 @@ describe('mapDict', () => {
   });
 
   test('maps object values for students', () => {
-    const result = mapDict(students, (value) => ({ ...value, gpa: value.gpa + 1 }));
+    const result = mapObject(students, (value) => ({ ...value, gpa: value.gpa + 1 }));
     expect(result).toEqual({
       alice: { age: 20, major: "Computer Science", gpa: 4.8 },
       bob: { age: 19, major: "Mathematics", gpa: 4.2 },
@@ -34,7 +34,7 @@ describe('mapDict', () => {
   });
 
   test('maps object values for books', () => {
-    const result = mapDict(books, (value) => ({ ...value, pages: value.pages + 10 }));
+    const result = mapObject(books, (value) => ({ ...value, pages: value.pages + 10 }));
     expect(result).toEqual({
       book1: { title: "1984", author: "George Orwell", pages: 338 },
       book2: { title: "To Kill a Mockingbird", author: "Harper Lee", pages: 291 },

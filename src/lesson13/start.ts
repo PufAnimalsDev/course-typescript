@@ -28,7 +28,23 @@ interface Dict<T> {
 }
 
 // Array.prototype.map, but for Dict
-export function mapDict(...args: any[]): any {}
+
+// #1 if I can use array.map and I can use Object.entries to get the key and value
+export function mapDict<T, U>(dict: Dict<T>, transform: (value: T, key: string) => U): Dict<U> {
+  return Object.fromEntries(
+    Object.entries(dict).map(([key, value]) => [key, transform(value, key)])
+  );
+}
+// #2 If I can't use array.map 
+export function mapObject<T, U>(dict: Dict<T>, transform: (value: T, key: string) => U): Dict<U> {
+  const result: Dict<U> = {};
+    for (const key in dict) {
+        if (dict.hasOwnProperty(key)) {
+            result[key] = transform(dict[key], key);
+        }
+    }
+    return result;
+}
 // Array.prototype.filter, but for Dict
 export function filterDict(...args: any[]): any {}
 // Array.prototype.reduce, but for Dict
