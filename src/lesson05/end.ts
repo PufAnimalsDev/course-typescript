@@ -64,7 +64,7 @@ const vehicle = {
   year: 2017,
 };
 
-function printCar(car: { make: sting; model: string; year: number }) {
+function printCar(car: { make: string; model: string; year: number }) {
   console.log(`${car.make} ${car.model} (${car.year})`);
 }
 

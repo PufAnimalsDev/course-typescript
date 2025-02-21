@@ -27,15 +27,22 @@ interface Dict<T> {
   [k: string]: T;
 }
 
-// Array.prototype.map, but for Dict
+/*
+####################################################################################
+#1 if I can use array.map and I can use Object.entries to get the key and value
+#2 If I can't use array.map and I can't use Object.entries to get the key and value
+####################################################################################
+*/
 
-// #1 if I can use array.map and I can use Object.entries to get the key and value
+// Array.prototype.map, but for Dict
+// # 1
 export function mapDict<T, U>(dict: Dict<T>, transform: (value: T, key: string) => U): Dict<U> {
   return Object.fromEntries(
     Object.entries(dict).map(([key, value]) => [key, transform(value, key)])
   );
 }
-// #2 If I can't use array.map 
+
+//#2
 export function mapObject<T, U>(dict: Dict<T>, transform: (value: T, key: string) => U): Dict<U> {
   const result: Dict<U> = {};
     for (const key in dict) {
@@ -45,7 +52,23 @@ export function mapObject<T, U>(dict: Dict<T>, transform: (value: T, key: string
     }
     return result;
 }
-// Array.prototype.filter, but for Dict
-export function filterDict(...args: any[]): any {}
+// Array.prototype.filter, but for Dict 
+// #1 
+export function filterDict<T>(dict: Dict<T>, predicate: (value: T, key: string) => boolean): Dict<T> {
+  return Object.fromEntries(
+    Object.entries(dict).filter(([key, value]) => predicate(value, key))
+  );
+}
+
+//#2 
+export function filterObject<T>(dict: Dict<T>, predicate: (value: T, key: string) => boolean): Dict<T> {
+  const result: Dict<T> = {};
+  for (const key in dict) {
+      if (dict.hasOwnProperty(key) && predicate(dict[key], key)) {
+          result[key] = dict[key];
+      }
+  }
+  return result;
+}
 // Array.prototype.reduce, but for Dict
 export function reduceDict(...args: any[]): any {}
