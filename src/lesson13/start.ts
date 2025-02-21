@@ -71,4 +71,21 @@ export function filterObject<T>(dict: Dict<T>, predicate: (value: T, key: string
   return result;
 }
 // Array.prototype.reduce, but for Dict
-export function reduceDict(...args: any[]): any {}
+export function reduceDict<T, U>(
+  dict: Dict<T>,
+  reducer: (acc: U, value: T, key: string) => U,
+  initialValue: U
+): U {
+  return Object.entries(dict).reduce((acc, [key, value]) => reducer(acc, value, key), initialValue);
+}
+
+
+export function reduceObject<T, U>(dict: Dict<T>, reducer: (acc: U, value: T, key: string, dict: Dict<T>) => U, initialValue: U): U {
+  let accumulator = initialValue;
+  for (const key in dict) {
+      if (dict.hasOwnProperty(key)) {
+          accumulator = reducer(accumulator, dict[key], key, dict);
+      }
+  }
+  return accumulator;
+}

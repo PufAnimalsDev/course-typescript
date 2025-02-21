@@ -1,4 +1,4 @@
-import { cars, reduceDict, students } from "../start";
+import { cars, reduceDict, reduceObject, students } from "../start";
 
 describe('reduceDict', () => {
     const books = {
@@ -11,16 +11,28 @@ describe('reduceDict', () => {
   
     test('reduces object values for cars', () => {
       const result = reduceDict(cars, (acc, value) => acc + value.price, 0);
+      const loopResult = reduceObject(cars, (acc, value) => acc + value.price, 0);
+
       expect(result).toBe(224998);
+      expect(loopResult).toBe(224998);
     });
   
     test('reduces object values for students', () => {
       const result = reduceDict(students, (acc, value) => acc + value.gpa, 0);
+      const loopResult = reduceObject(students, (acc, value) => acc + value.gpa, 0);
+
       expect(result).toBe(21.4);
+      expect(loopResult).toBe(21.4);
     });
   
     test('reduces object values for books', () => {
       const result = reduceDict(books, (acc, value) => acc + value.pages, 0);
+      const loopResult = reduceObject(books, (acc, value) => acc + value.pages, 0);
+
       expect(result).toBe(2649);
+      expect(loopResult).toBe(2649);
     });
   });
+
+
+
