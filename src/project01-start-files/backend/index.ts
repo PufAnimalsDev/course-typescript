@@ -1,18 +1,12 @@
-import { createServer } from 'http';
+import http from "http";
+import { router } from "./routes";
 
-const PORT = 3000;
-const server = createServer(async (req, res) => {
-  res.end(JSON.stringify({ status: 'ok'}))
+const PORT = process.env.PORT || 3000;
 
-  // 1st option serve static files from frontend folder while hitting /static/ endpoint
-  // if (// startsWith(/static/)) {}
-  // then server file 
-  // 2nd option allow CORS
-
-  // 1. Obsługa endpointów
-  // 2. Proste serwowanie plików statycznych z katalogu frontend (np. pod ścieżką /static/)
+const server = http.createServer((req, res) => {
+  router(req, res);
 });
 
 server.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Serwer działa na http://localhost:${PORT}`);
 });

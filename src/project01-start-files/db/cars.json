@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "model": "BWM",
+    "price": "4000",
+    "ownerId": "9385850964basia",
+    "id": "1078506102BWM"
+  },
+  {
+    "model": "Audi",
+    "price": 4500,
+    "ownerId": "9385850964basia",
+    "id": "3832669989Audi"
+  }
+]

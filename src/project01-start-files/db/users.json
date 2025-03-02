@@ -1,10 +1,93 @@
 [
-    {
-      "id": "admin001",
-      "username": "admin",
-      "password": "admin123",
-      "role": "admin",
-      "balance": 10000
-    }
-  ]
-  
+  {
+    "id": "admin001",
+    "username": "admin",
+    "password": "admin123",
+    "role": "admin",
+    "balance": 105450
+  },
+  {
+    "username": "basia",
+    "password": "123",
+    "role": "user",
+    "balance": 32068,
+    "id": "9385850964basia"
+  },
+  {
+    "username": "janek",
+    "password": "123456",
+    "role": "user",
+    "balance": 12482,
+    "id": "2008353452janek"
+  },
+  {
+    "username": "arek",
+    "password": "123456",
+    "role": "user",
+    "balance": 0,
+    "id": "9437012776arek"
+  },
+  {
+    "username": "Radek",
+    "password": "789",
+    "id": "3020311688Radek",
+    "role": "user",
+    "balance": 0
+  },
+  {
+    "username": "góra",
+    "password": "",
+    "id": "8489631285wladek",
+    "role": "admin",
+    "balance": "4800"
+  },
+  {
+    "username": "waldek",
+    "password": "qwerty",
+    "id": "8171541914waldek",
+    "role": "user",
+    "balance": 0
+  },
+  {
+    "username": "mateusz",
+    "password": "741",
+    "id": "9485284536mateusz",
+    "role": "user",
+    "balance": 0
+  },
+  {
+    "username": "eryk",
+    "password": "753",
+    "id": "7021745449eryk",
+    "role": "user",
+    "balance": 0
+  },
+  {
+    "username": "eryk1",
+    "password": "753",
+    "id": "1983738434eryk1",
+    "role": "user",
+    "balance": 0
+  },
+  {
+    "username": "eryk12",
+    "password": "753",
+    "id": "2886283472eryk12",
+    "role": "user",
+    "balance": 0
+  },
+  {
+    "username": "eryk123",
+    "password": "753",
+    "id": "5173361300eryk123",
+    "role": "user",
+    "balance": 0
+  },
+  {
+    "username": "wq1",
+    "password": "weq",
+    "id": "1083117564wq1",
+    "role": "user",
+    "balance": 0
+  }
+]
